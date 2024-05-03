@@ -1,0 +1,54 @@
+﻿@model CIBPOOT2.Models.Producto
+@{
+    ViewData["Title"] = "Eliminar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3 class="text-danger">¿Está seguro de eliminar el producto?</h3>
+<hr />
+<div class="row">
+    <div class="col-sm-4">
+        <form asp-action="Eliminar" asp-controller="Home" method="post">
+            <input type="hidden" asp-for="IdProducto" />
+
+            <div class="mb-2">
+                <label class="form-label" asp-for="Nombre">Nombre</label>
+                <input class="form-control form-control-sm" asp-for="Nombre" type="text" disabled />
+            </div>
+
+
+            <div class="mb-2">
+                <label class="form-label" asp-for="Descripcion">Descripción</label>
+                <input class="form-control form-control-sm" asp-for="Descripcion" type="text" disabled  />
+            </div>
+
+
+            <div class="mb-2">
+                <label class="form-label" asp-for="Precio">Precio</label>
+                <input class="form-control form-control-sm" asp-for="Precio" type="text" disabled />
+            </div>
+
+            <div class="mb-2">
+                <label class="form-label" asp-for="Stock">Stock</label>
+                <input class="form-control form-control-sm" asp-for="Stock" type="text" disabled />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label" asp-for="IdCategoria">Cargo</label>
+                <input class="form-control form-control-sm" asp-for="oCategoria.Nombre" type="text" disabled />
+            </div>
+
+            <div class="mb-2">
+                <label class="form-label" asp-for="FechaCreacion">Fecha de ingreso</label>
+                <input class="form-control form-control-sm" asp-for="FechaCreacion" type="text" disabled />
+            </div>
+
+            <div class="mb-2">
+                <button class="btn btn-danger btn-sm m-25" type="submit">Eliminar</button>
+                <a class="btn btn-dark btn-sm" asp-action="Index" asp-controller="Home">Volver</a>
+            </div>
+
+
+        </form>
+    </div>
+</div>
